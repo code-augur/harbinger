@@ -57,6 +57,8 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.1.0)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
     ffi (1.9.3)
     formatador (0.2.5)
     guard (2.6.1)
@@ -209,6 +211,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   devise
+  factory_girl
   guard-bundler
   guard-rspec
   guard-spring
