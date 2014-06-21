@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
+
 gem 'rails', '4.1.1'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -20,6 +22,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'spring'
   gem 'guard-spring'
+  gem 'guard-bundler'
 end
 
 group :test do
