@@ -7,33 +7,9 @@ group :frontend do
     watch('Gemfile')
   end
 
-  guard :pow do
-    watch('.rvmrc')
-    watch(%r{^\.pow(rc|env)$})
-    watch('Gemfile.lock')
-    watch(%r{^config/.+\.rb$})
-  end
-
-  guard :livereload do
-    watch(%r{^app/.+\.(erb|haml)})
-    watch(%r{^app/helpers/.+\.rb})
-    watch(%r{^public/.+\.(css|js|html)})
-    watch(%r{^config/locales/.+\.yml})
-  end
-
 end
 
 group :backend do
-
-  guard 'spork', :wait => 50 do
-    watch('Gemfile')
-    watch('Gemfile.lock')
-    watch('config/application.rb')
-    watch('config/environment.rb')
-    watch(%r{^config/environments/.+\.rb})
-    watch(%r{^config/initializers/.+\.rb})
-    watch('spec/spec_helper.rb')
-  end
 
   guard :rspec, :version => 2, :cli => "--color --drb -r rspec/instafail -f RSpec::Instafail", :bundler => false, :all_after_pass => false, :all_on_start => false, :keep_failed => false do
     watch('spec/spec_helper.rb')                                               { "spec" }
