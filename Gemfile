@@ -23,7 +23,7 @@ group :development, :test do
   gem 'spring'
   gem 'guard-spring'
   gem 'guard-bundler'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 group :test do
