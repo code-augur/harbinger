@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 ruby '2.1.1'
 
 gem 'rails', '4.1.1'
@@ -23,13 +22,16 @@ group :development, :test do
   gem 'spring'
   gem 'guard-spring'
   gem 'guard-bundler'
-  gem 'factory_girl_rails'
+  gem 'childprocess'
+  gem 'pry'
+  gem 'launchy', '~> 2.4.2'
 end
 
 group :test do
-  gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'poltergeist'
   gem 'libnotify'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :production do
