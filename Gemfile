@@ -18,18 +18,19 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'guard-rspec'
   gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
   gem 'guard-spring'
   gem 'guard-bundler'
   gem 'childprocess'
   gem 'pry'
-  gem 'launchy', '~> 2.4.2'
+  gem 'launchy'
 end
 
 group :test do
-  gem 'capybara'
   gem 'poltergeist'
+  gem 'capybara'
   gem 'libnotify'
   gem 'factory_girl_rails', '~> 4.0'
 end
