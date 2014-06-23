@@ -1,6 +1,5 @@
 require 'capybara/rspec'
 require 'capybara/poltergeist'
-require 'pry'
 
 RSpec.configure do |config|
   # Print the 10 slowest examples and example groups at the
@@ -21,7 +20,15 @@ RSpec.configure do |config|
   Kernel.srand config.seed
   
   config.include Capybara::DSL
-  Capybara.default_driver = :poltergeist
-
+  Capybara.register_driver :poltergeist do |app|
+    Capybara::Poltergeist::Driver.new(app, {
+      js_errors: true,
+      inspector: true,
+      phanjomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes'],
+      timeout:120
+    })
+  end
+  Capybara.default_driver    = :poltergeist
+  Capybara.javascript_driver = :poltergeist
 end
 
